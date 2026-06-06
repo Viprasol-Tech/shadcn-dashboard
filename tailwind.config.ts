@@ -1,5 +1,10 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * Colors are driven by CSS custom properties (declared in `app/globals.css`)
+ * so the same utility classes resolve to light or dark values depending on the
+ * `.dark` class on the document root.
+ */
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -10,17 +15,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        border: "hsl(214.3 31.8% 91.4%)",
-        background: "hsl(0 0% 100%)",
-        foreground: "hsl(222.2 47.4% 11.2%)",
-        muted: "hsl(210 40% 96.1%)",
-        "muted-foreground": "hsl(215.4 16.3% 46.9%)",
-        primary: "hsl(222.2 47.4% 11.2%)",
-        "primary-foreground": "hsl(210 40% 98%)",
-        destructive: "hsl(0 84.2% 60.2%)",
-        "destructive-foreground": "hsl(210 40% 98%)",
-        accent: "hsl(210 40% 96.1%)",
-        "accent-foreground": "hsl(222.2 47.4% 11.2%)",
+        border: "hsl(var(--border))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        muted: "hsl(var(--muted))",
+        "muted-foreground": "hsl(var(--muted-foreground))",
+        primary: "hsl(var(--primary))",
+        "primary-foreground": "hsl(var(--primary-foreground))",
+        destructive: "hsl(var(--destructive))",
+        "destructive-foreground": "hsl(var(--destructive-foreground))",
+        accent: "hsl(var(--accent))",
+        "accent-foreground": "hsl(var(--accent-foreground))",
       },
       borderRadius: {
         lg: "0.5rem",

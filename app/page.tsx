@@ -1,6 +1,6 @@
 import { Sidebar } from "@/components/sidebar";
 import { StatCard } from "@/components/stat-card";
-import { Button } from "@/components/ui/button";
+import { Topbar } from "@/components/topbar";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -17,20 +17,10 @@ export default function DashboardPage() {
       <Sidebar pathname="/" />
 
       <main className="flex-1 p-8">
-        <header className="mb-8 flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight">Overview</h1>
-            <p className="text-sm text-muted-foreground">
-              Welcome back. Here is what is happening today.
-            </p>
-          </div>
-          <div className="flex gap-2">
-            <Button variant="outline" size="sm">
-              Export
-            </Button>
-            <Button size="sm">New report</Button>
-          </div>
-        </header>
+        <Topbar
+          title="Overview"
+          description="Welcome back. Here is what is happening today."
+        />
 
         <section className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
